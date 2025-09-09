@@ -27,7 +27,7 @@ package object FuncionesRecursivas {
 
       def actualNumber = actualList.head
 
-      if (nextList.isEmpty) maxNumber else {
+      if (nextList.isEmpty) mayorOIgualQue(maxNumber, actualNumber) else {
         maxItFunction(nextList, mayorOIgualQue(maxNumber, actualNumber))
       }
     }
