@@ -39,5 +39,10 @@ package object FuncionesRecursivas {
     maxItFunction(l, l.head)
   }
 
+  def movsTorresHanoi (n : Int ) : BigInt = {
+    if (n>0)
+
+    else movsTorresHanoi(n-1)
+  }
 
 }
