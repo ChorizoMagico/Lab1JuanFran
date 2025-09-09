@@ -2,16 +2,13 @@ package object FuncionesRecursivas {
 
   def maxLin(l: List[Int ]):Int = {
 
-    def maxLinFunction(newList:List[Int]):Int = {
+    def maxLinFunction(list:List[Int]):Int = {
 
-      def nextList = newList.tail
-      def actualNumber = newList.head
+      def nextList = list.tail
+      def actualNumber = list.head
 
       if (nextList.isEmpty) actualNumber else {
-
-        def nextNumber = nextList.head
-        val linList = mayorOIgualQue(actualNumber, nextNumber)::nextList.tail
-        maxLinFunction(linList)
+        mayorOIgualQue(actualNumber, maxLinFunction(nextList))
       }
     }
 
