@@ -4,11 +4,8 @@ package object FuncionesRecursivas {
 
     def maxLinFunction(list:List[Int]):Int = {
 
-      def nextList = list.tail
-      def actualNumber = list.head
-
-      if (nextList.isEmpty) actualNumber else {
-        mayorOIgualQue(actualNumber, maxLinFunction(nextList))
+      if (list.tail.isEmpty) list.head else {
+        mayorOIgualQue(list.head, maxLinFunction(list.tail))
       }
     }
 
@@ -23,12 +20,8 @@ package object FuncionesRecursivas {
 
     def maxItFunction(actualList: List[Int], maxNumber: Int): Int = {
 
-      def nextList = actualList.tail
-
-      def actualNumber = actualList.head
-
-      if (nextList.isEmpty) mayorOIgualQue(maxNumber, actualNumber) else {
-        maxItFunction(nextList, mayorOIgualQue(maxNumber, actualNumber))
+      if (actualList.tail.isEmpty) mayorOIgualQue(maxNumber, actualList.head) else {
+        maxItFunction(actualList.tail, mayorOIgualQue(maxNumber, actualList.head))
       }
     }
 
@@ -39,5 +32,9 @@ package object FuncionesRecursivas {
     maxItFunction(l, l.head)
   }
 
+  def movsTorresHanoi(n: Int): BigInt = {
+    if (n == 1) 1
+    else 2 * movsTorresHanoi(n - 1) + 1
+  }
 
 }
